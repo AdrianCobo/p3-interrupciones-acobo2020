@@ -11,4 +11,3 @@ if __name__ == '__main__':
     while True:
         GPIO.wait_for_edge(pulsadorGPIO, GPIO.RISING)
         print("El boton se ha pulsado")
-

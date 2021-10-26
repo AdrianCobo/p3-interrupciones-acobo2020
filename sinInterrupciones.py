@@ -27,5 +27,4 @@ if __name__ == '__main__':
         else:
             pulsado = False
 
-        time.sleep(0.1) # si pulsamos rápida/ veremos que algunas se escapan...
-
+        time.sleep(0.1) # si pulsamos rápida/ veremos que algunas se escapan... esto se hace para soltar el procesador
