@@ -31,6 +31,10 @@ la salida de un pin que va a estar conectado a un led. Una vez conseguido eso,ta
 controlar otro led usando otro boton, y crear las condiciones booleanas que nos van a permitir que los leeds se puedan controlar de forma
 independiente.
 
-*Importante*:antes de usar este programa ejecuta el programa GPIOCLEANUP.py para limpiar los GPIOS
+Para el programa InterrupcionesMejorado.py nos damos cuenta de que al solo tener un hilo, el procesador solo va a estar pediente del 
+pulsador que le corresponda con el metodo GPIO.wait_for_edge, y hasta que no haya hecho algo ese boton, lo que haga el otro le va a dar 
+igual y no va a avanzar mas en el programa hasta que no reciba una señal del pulsador del que está pendiente.
+
+*Importante*:antes de usar estos programa ejecuta el programa GPIOCLEANUP.py para limpiar los GPIOS
 
 Para cualquier duda: <a.cobo.2020@alumos.urjc.es>
