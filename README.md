@@ -35,6 +35,12 @@ Para el programa InterrupcionesMejorado.py nos damos cuenta de que al solo tener
 pulsador que le corresponda con el metodo GPIO.wait_for_edge, y hasta que no haya hecho algo ese boton, lo que haga el otro le va a dar 
 igual y no va a avanzar mas en el programa hasta que no reciba una señal del pulsador del que está pendiente.
 
+Finalmente para el programa interrupcionEventMejorado.py nos damos cuenta de que el programa solo puede atender a lo que pasa en un solo 
+boton a la vez ya que solo teneos un hilo y el metodoGPIO.add_event_detect() solo nos permite introducir un unico pin como parametro para
+ese evento, y además,ese metodo solo nos permite tener un evento por gpio, es decir que solo podremos encender el led al pulsar el boton
+si tubiesemos un evento para hacerlo,pero no podremos apagarlo cuando se suelte por ejemplo. Por eso en el ejercicio entregado, se enciende
+el led durante 1  segundo y luego se apaga.
+
 *Importante*:antes de usar estos programa ejecuta el programa GPIOCLEANUP.py para limpiar los GPIOS
 
 Para cualquier duda: <a.cobo.2020@alumos.urjc.es>
