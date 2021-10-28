@@ -10,19 +10,31 @@ pulsadorGPIO2 = 21
 ledGPIO1=20
 ledGPIO2=12
 
+flag1 = 0
+flag2 = 0
+
 def callbackSalir (senial, cuadro): # señal y estado cuando se produjo la interrup.
     GPIO.cleanup () # limpieza de los recursos GPIO antes de salir
     sys.exit(0)
 
 def callbackBotonPulsado1 (canal):
-    pwm.ChangeDutyCycle(100)
-    time.sleep(1)
-    pwm.ChangeDutyCycle(0)
+    global flag1
+    if flag1 == 0:
+        pwm.ChangeDutyCycle(100)
+        flag1 = 1
+    else:
+        pwm.ChangeDutyCycle(0)
+        flag1 = 0
+
 
 def callbackBotonPulsado2 (canal):
-    pwm2.ChangeDutyCycle(100)
-    time.sleep(1)
-    pwm2.ChangeDutyCycle(0)
+    global flag2
+    if flag2 == 0:
+        pwm2.ChangeDutyCycle(100)
+        flag2 = 1
+    else:
+        pwm2.ChangeDutyCycle(0)
+        flag2 = 0
 
 if __name__ == '__main__':
     GPIO.setmode(GPIO.BCM)
@@ -35,6 +47,7 @@ if __name__ == '__main__':
     pwm.start (0)
     pwm2 = GPIO.PWM(ledGPIO2,100)
     pwm2.start (0)
+
 
     GPIO.add_event_detect(pulsadorGPIO1, GPIO.FALLING,
       callback=callbackBotonPulsado1, bouncetime=500) # expresado en ms.
