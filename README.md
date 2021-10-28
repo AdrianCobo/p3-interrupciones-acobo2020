@@ -4,7 +4,7 @@
 
 El objetivo de este esta práctica es tener la primera toma de contacto con las intorrupciones y con los botones.
 
-###Ejercicio1
+### Ejercicio1
 
 En el ejercicio 1,he correjido el problema del rebote añadiendo una condición booliana como flag y para resolver el problema de finalizar 
 el programa con control+c no he podido hacerlo de ninguna otra forma que no fuese sustituir el while true por un hilo,lo que haria de mi 
@@ -24,7 +24,7 @@ signal.signal(signal.SIGINT, callbackSalir) # callback para CTRL+C que limpia to
 signal.pause()
 ```
 
-###Ejercicio2
+### Ejercicio2
 
 El esquema de los gpios utilizados es el mismo para los 3 programas y se intuye en: 
 
