@@ -57,7 +57,7 @@ def evento(parametro):
 GPIO.add_event_detect(pulsadorGPIO1, GPIO.FALLING,callback=lambda x:evento(parametro), bouncetime=500)
 ```
 
-*Importante*:antes de usar estos programa ejecuta el programa GPIOCLEANUP.py para limpiar los GPIOS
+**Importante: antes de usar estos programa ejecuta el programa GPIOCLEANUP.py para limpiar los GPIOS**
 
 Si quieres ver un video de demostracion del programa sinInterrupcionesMejorado.py, 
 pulsa [aqui](https://drive.google.com/file/d/1aWFSqJxfIakVRPgp6kce8qWLPtNMSFMa/view?usp=sharing).
